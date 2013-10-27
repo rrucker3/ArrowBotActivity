@@ -63,11 +63,6 @@ public class ArrowBotActivity {
 		
 		System.out.println("Now let's go!\n\n");
 		
-		/*
-		 * The user controls the robot by using wasd, with q for quit. However, the user has to
-		 * hit the enter key after each command. There is no good way to read a single character
-		 * from the command line in Java. It's a hard limitation on the language.
-		 */
 		g.drawGrid(a.getRobotPosition());
 		while(true){
 			a.move();
