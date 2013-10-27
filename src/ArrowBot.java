@@ -21,7 +21,11 @@ public abstract class ArrowBot {
 		return robotPosition;
 	}
 	
-	//How the robot moves will depend on whether it's autonomously or manually controlled.
-	public abstract void move();
+	/*How the robot moves will depend on whether it's autonomously or manually controlled.
+	 * If you leave the visibility blank, it defaults to "package-private", which means that
+	 * every class in this package/project can see it, but nothing else can. This is probably
+	 * adequate for this project.
+	 */
+	abstract void move();
 	
 }

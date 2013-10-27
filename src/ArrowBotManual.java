@@ -24,7 +24,7 @@ public class ArrowBotManual extends ArrowBot {
 	 * its movement in different ways. This one is controlled by wasd.
 	 */
 	@Override
-	public void move() {
+	void move() {
 		char input='o';
 
 		/*
