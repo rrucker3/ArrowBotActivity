@@ -11,6 +11,10 @@
 
 public abstract class ArrowBot {
 
+	/*
+	 * Protected variables are visible to the class and its children. All robots are going
+	 * to have a position, so I declare it here.
+	 */
 	protected gridPosition robotPosition;
 	
 	public ArrowBot(gridPosition p){
@@ -28,4 +32,26 @@ public abstract class ArrowBot {
 	 */
 	abstract void move();
 	
+	/*
+	 * There are two ways to do a read-write combination: the one-line method or the two-line
+	 * method. Personally, I prefer putting it in one line because it keeps the code shorter,
+	 * but if it helps you keep track to have the reading and writing take place on separate
+	 * lines, that is fine too, and the performance change is trival.
+	 */
+	protected void moveUp(){
+		int curX=robotPosition.getX(),curY=robotPosition.getY();
+		robotPosition.setPosition(curX, curY-1);
+	}
+	
+	protected void moveLeft(){
+		robotPosition.setPosition(robotPosition.getX()-1, robotPosition.getY());
+	}
+	
+	protected void moveRight(){
+		robotPosition.setPosition(robotPosition.getX()+1, robotPosition.getY());
+	}
+
+	protected void moveDown(){
+		robotPosition.setPosition(robotPosition.getX(), robotPosition.getY()+1);
+	}
 }

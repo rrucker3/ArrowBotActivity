@@ -21,7 +21,7 @@ public class ArrowBotManual extends ArrowBot {
 	/*
 	 * Each different implementation of ArrowBot (autonomous or no) will move differently.
 	 * This is what defines an ArrowBot. So every child class of ArrowBot will implement
-	 * its movement in different ways. This one is controlled by wasd.
+	 * its movement in different ways. This one is controlled by wasd from the console.
 	 */
 	@Override
 	void move() {
@@ -54,22 +54,4 @@ public class ArrowBotManual extends ArrowBot {
 			}		
 		}
 	}
-	
-	private void moveUp(){
-		int curX=robotPosition.getX(),curY=robotPosition.getY();
-		robotPosition.setPosition(curX, curY-1);
-	}
-	
-	private void moveLeft(){
-		robotPosition.setPosition(robotPosition.getX()-1, robotPosition.getY());
-	}
-	
-	private void moveRight(){
-		robotPosition.setPosition(robotPosition.getX()+1, robotPosition.getY());
-	}
-
-	private void moveDown(){
-		robotPosition.setPosition(robotPosition.getX(), robotPosition.getY()+1);
-	}
-	
 }

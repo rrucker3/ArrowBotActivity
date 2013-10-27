@@ -1,5 +1,7 @@
 /*
- * This class represents the position of something in 2D space.
+ * This class represents the position of something in 2D space. I originally tracked 
+ * everything as separate x and y variables, but this is exactly the kind of thing class
+ * abstraction comes in handy for.
  * Author: Rob Rucker
  * Creation date: 10/26/2013
  */
