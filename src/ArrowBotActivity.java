@@ -41,7 +41,7 @@ public class ArrowBotActivity {
 		 * different from classes that you write on your own or import.
 		 */
 		Grid g;
-		Position p;
+		Position gridSize;
 		gridPosition robotStart;
 		ArrowBot a;
 		
@@ -60,14 +60,14 @@ public class ArrowBotActivity {
 		 * and a host of other benefits. Subroutines are essential to any program written 
 		 * after about 1960.
 		 */
-		p = getPosition();
+		gridSize = getPosition();
 		
 		//The below line is what's known as a debugging line. I ran this at first to test that
 		//the input reading was working correctly. It didn't at first, so I'm glad I put it in.
 		//Now that it's working, I comment out the line or remove it completely.
 		//System.out.println("Your numbers are: "+p.getX()+" and "+p.getY()+".");
 		
-		g = new Grid(p.getX(),p.getY());
+		g = new Grid(gridSize.getX(),gridSize.getY());
 		g.drawGrid();
 		
 		System.out.println("Check out your grid! This is where your robot is going to roam.");
