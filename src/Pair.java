@@ -4,20 +4,24 @@
  * abstraction comes in handy for.
  * Author: Rob Rucker
  * Creation date: 10/26/2013
+ * 
+ * rpr 11/3/2013: Renamed this from "Position" to "Pair". Since this class doesn't have
+ * a reference to any type of "position", it is just a pair of numbers. Renaming this
+ * class brings it closer to the proper abstraction.
  */
-public class Position {
+public class Pair {
 
 	protected int x,y;
 	
 	/*
 	 * This constructor is for the default initial position.
 	 */
-	public Position(){
+	public Pair(){
 		this.x=1;
 		this.y=1;
 	}
 	
-	public Position(int x,int y){
+	public Pair(int x,int y){
 		this.x=x;
 		this.y=y;
 	}
@@ -35,7 +39,7 @@ public class Position {
 		return y;
 	}
 	
-	public boolean equals(Position p){
+	public boolean equals(Pair p){
 		return (this.x==p.getX()&&this.y==p.getY());
 	}
 	

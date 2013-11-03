@@ -41,9 +41,12 @@ public class ArrowBotActivity {
 		 * different from classes that you write on your own or import.
 		 */
 		Grid g;
-		Position gridSize;
+		Pair gridSize;
 		gridPosition robotStart;
 		ArrowBot a;
+		Scanner keyboard = new Scanner(System.in);
+		//I initialize the keyboard before I perform any input and pass it into all methods that
+		//use it, since the console is shared among all methods in this class.
 		
 		/*
 		 * END VARIABLE DECLARATIONS
@@ -60,7 +63,7 @@ public class ArrowBotActivity {
 		 * and a host of other benefits. Subroutines are essential to any program written 
 		 * after about 1960.
 		 */
-		gridSize = getPosition();
+		gridSize = getPosition(keyboard);
 		
 		//The below line is what's known as a debugging line. I ran this at first to test that
 		//the input reading was working correctly. It didn't at first, so I'm glad I put it in.
@@ -74,7 +77,7 @@ public class ArrowBotActivity {
 		
 		System.out.println("Where should your robot start?");
 		
-		robotStart = getGridPosition(g);
+		robotStart = getGridPosition(keyboard,g);
 		
 		/*
 		 * Later, this is where the user will be queried about which type of robot will
@@ -99,17 +102,14 @@ public class ArrowBotActivity {
 			g.drawGrid(a.getRobotPosition());
 			if(a.getRobotPosition().equals(g.getGoalPosition())){
 				System.out.println("You're winner!");
+				keyboard.close();
 				quit();
 			}
 		}
 
 	}
 	
-	private static Position getPosition(){
-		//A scanner is required (along with the import statement up top) to read input from the user.
-		//You'll need it if you want to take input from the terminal window. Let's put it here with
-		//the other method-level variables.
-		Scanner keyboard = new Scanner(System.in);
+	private static Pair getPosition(Scanner keyboard){
 		String input="";
 		int posX,posY;
 		
@@ -136,15 +136,15 @@ public class ArrowBotActivity {
 		posX=Integer.parseInt(input.split(",")[0]);
 		posY=Integer.parseInt(input.split(",")[1]);
 		
-		return new Position(posX,posY);
+		return new Pair(posX,posY);
 	}
 	
 	/*
 	 * The above function, getPosition, is used to return a position, but if a gridPosition
 	 * is used, the function below can be used to create a position with respect to a grid.
 	 */
-	private static gridPosition getGridPosition(Grid g){
-		Position p = getPosition();
+	private static gridPosition getGridPosition(Scanner keyboard,Grid g){
+		Pair p = getPosition(keyboard);
 		return new gridPosition(p.getX(),p.getY(),g);
 	}
 	

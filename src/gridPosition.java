@@ -8,7 +8,7 @@
  * Author: Rob Rucker
  * Creation date: 10/26/2013
  */
-public class gridPosition extends Position {
+public class gridPosition extends Pair {
 
 	private int maxX,maxY;
 	

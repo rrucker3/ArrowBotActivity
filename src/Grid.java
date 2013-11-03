@@ -22,7 +22,7 @@ public final class Grid {
 		EMPTYSQUARE,GOALSQUARE,OBSTACLE
 	}
 	private int sizeX, sizeY;
-	private Position goalPosition;
+	private Pair goalPosition;
 	private Square[][] arena;
 	
 	/*
@@ -36,7 +36,7 @@ public final class Grid {
 		//Generate goal position randomly
 		goalX=gen.nextInt(sizex);
 		goalY=gen.nextInt(sizey);
-		this.goalPosition=new Position(goalX,goalY);
+		this.goalPosition=new Pair(goalX,goalY);
 		
 		this.sizeX=sizex;
 		this.sizeY=sizey;
@@ -72,18 +72,18 @@ public final class Grid {
 		return sizeY;
 	}
 	
-	public Position getGoalPosition(){
+	public Pair getGoalPosition(){
 		return goalPosition;
 	}
 	
 	//Print grid if a robot position is not specified
 	public void drawGrid(){
-		Position p = new Position(-1,-1);  //If the position is negative, there are no robots on the board.
+		Pair p = new Pair(-1,-1);  //If the position is negative, there are no robots on the board.
 		drawGrid(p);
 	}
 	
 	//Print grid to console
-	public void drawGrid(final Position robotPosition){
+	public void drawGrid(final Pair robotPosition){
 		int indexX,indexY;
 		
 		//Draw top border
